@@ -488,7 +488,7 @@ Super Export.jsx
             
             exportableLayers.each(function(l, i){
                 win.prog.value = ((i+1)*100.0)/(exportableLayers.length+1);
-                exportLayer(l);
+                exportLayer(l, exportPath);
             });
             win.prog.value = 100;
                 
@@ -499,7 +499,7 @@ Super Export.jsx
             prepGuiForExport();
             win.lblProgress.text = "Exporting "+activeLayerDataToExport.name+"...";
             win.prog.value = 50;
-            exportLayer(activeLayerDataToExport);
+            exportLayer(activeLayerDataToExport, exportPath);
             win.close();
         };
         win.center();
